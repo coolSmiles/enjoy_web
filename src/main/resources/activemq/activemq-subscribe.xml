@@ -28,7 +28,7 @@
         <property name="targetConnectionFactory">  
             <bean class="org.apache.activemq.ActiveMQConnectionFactory">  
                 <!-- MQ地址 -->  
-                <property name="brokerURL" value="tcp://localhost:61616" />  
+                <property name="brokerURL" value="tcp://101.132.162.166:61616" />  
             </bean>  
         </property>  
     </bean>

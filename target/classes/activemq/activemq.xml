@@ -19,7 +19,7 @@
         >
     <!-- activeMQ 连接工厂  具体的连接工厂由mq厂商提供 -->
     <amq:connectionFactory id="amqConnectionFactory" 
-        brokerURL="tcp://127.0.0.1:61616" 
+        brokerURL="tcp://101.132.162.166:61616" 
         userName="admin" 
         password="admin" />
     

@@ -26,4 +26,12 @@ public class User {
 	public void setAge(String age) {
 		this.age = age;
 	}
+	
+	@SuppressWarnings("static-access")
+	public static void main(String[] args) throws Exception {
+		for(;;) {
+			Thread.currentThread().sleep(1000);
+			System.out.println("---");
+		}
+	}
 }
