@@ -15,67 +15,62 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HelloWorldController{
-	
-	
-	public HelloWorldController(){
-		System.out.println("hello world ³õÊ¼»¯Ö´ÐÐÁË¡£¡£¡£¡£");
-	}
+public class HelloWorldController {
 
-	@RequestMapping(value="/welcomes")
-	public ModelAndView handleRequests(
-			HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		System.out.println("Ö´ÐÐ¡£¡£¡£¡£");
-		ModelAndView model = new ModelAndView();
-		
-		model.setViewName("welcome");
-		
-		// »ñÈ¡springÈÝÆ÷ÉÏÏÂÎÄ
-		ServletContext servletContext = request.getSession().getServletContext();
-		WebApplicationContextUtils.getWebApplicationContext(servletContext);
-		WebApplicationContextUtils.findWebApplicationContext(servletContext);
-		return model;
-	}
-	
-	@SuppressWarnings("static-access")
-	@ResponseBody
-	@RequestMapping(value="/hello")
-	public String hello(){
-		System.out.println(Thread.currentThread().getName());
-		try {
-			Thread.currentThread().sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		return "abc--->"+Thread.currentThread().getName();
-	}
-	
-	@ResponseBody
-	@RequestMapping(value="/world")
-	public Map<String, String> world(){
-		
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("1", "ac");
-		map.put("2", "abc");
-		map.put("3", "aec");
-		return map;
-	}
+    public HelloWorldController() {
+        System.out.println("hello world ï¿½ï¿½Ê¼ï¿½ï¿½Ö´ï¿½ï¿½ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+    }
 
-	@ResponseBody
-	@RequestMapping(value="/user")
-	public User user(){
-		User user = new User();
-		user.setAge("11");
-		user.setName("zhangsan");
-		return user;
-	}
-	
-	public static void main(String[] args) {
-		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:application.xml");
-		
-		User user = (User) applicationContext.getBean("user");
-		System.out.println(user.toString());
-		
-	}
+    @RequestMapping(value = "/welcomes")
+    public ModelAndView handleRequests(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("Ö´ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+        ModelAndView model = new ModelAndView();
+
+        model.setViewName("welcome");
+
+        // ï¿½ï¿½È¡springï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        ServletContext servletContext = request.getSession().getServletContext();
+        WebApplicationContextUtils.getWebApplicationContext(servletContext);
+        WebApplicationContextUtils.findWebApplicationContext(servletContext);
+        return model;
+    }
+
+    @SuppressWarnings("static-access")
+    @ResponseBody
+    @RequestMapping(value = "/hello")
+    public String hello() {
+        System.out.println(Thread.currentThread().getName());
+        try {
+            Thread.currentThread().sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "abc--->" + Thread.currentThread().getName();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/world")
+    public Map<String, String> world() {
+
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("1", "ac");
+        map.put("2", "abc");
+        map.put("3", "aec");
+        return map;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/user")
+    public User user() {
+        User user = new User();
+        user.setAge("11");
+        user.setName("zhangsan");
+        return user;
+    }
+
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+                "classpath:application.xml");
+
+    }
 }
