@@ -45,4 +45,6 @@
 	   			</list>
 	   		</property>
 	   </bean>
+	   
+	   <bean id="disposableBeanTest" class="com.spring.lifeCycle.DisposableBeanTest"/>
 </beans>
